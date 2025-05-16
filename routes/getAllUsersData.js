@@ -5,8 +5,7 @@ const User = require('../models/user');
 const router = express.Router();
 
 router.get('/GetAllUsers', async (req, res) => {
-    console.log(req.body);
-    const { email, password , name } = req.body;
+    console.log('here i am getAllUsers');
     try {
         let user = await User.find();
         res.json({ Users: user});
