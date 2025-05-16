@@ -32,7 +32,7 @@ router.post('/login', async (req, res) => {
         if (!isMatch) return res.status(400).json({ msg: 'Invalid credentials' });
 
         const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, { expiresIn: '1h' });
-        res.json({ user:user.select('-password'),token });
+        res.json({ user:user,token });
     } catch (err) {
         res.status(500).send('Server error');
     }
