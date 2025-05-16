@@ -23,11 +23,20 @@ const weatherRoutes = require('./routes/weather');
 const quoteRoutes = require('./routes/qoute'); // keep filename typo-consistent
 const geminiRoutes = require('./routes/gemini');
 const GetAllUsers = require('./routes/getAllUsersData');
+const GetUserDetails = require('./routes/UserDetails');
+
+
+
 app.use('/api', authRoutes);
 app.use('/api', weatherRoutes);
 app.use('/api', quoteRoutes);
 app.use('/api', geminiRoutes);
 app.use('/api', GetAllUsers);
+app.use('/api', GetUserDetails);
+
+
+
+
 // Start the server
 
 const PORT = process.env.PORT || 3000;
