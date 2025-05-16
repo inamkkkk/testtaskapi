@@ -8,7 +8,7 @@ router.get('/GetAllUsers', async (req, res) => {
     console.log('here i am getAllUsers');
     try {
         let user = await User.find().select('-password');
-        res.json({ Users: user});
+        res.json({user});
     } catch (err) {
         res.status(500).send('Server error');
     }
