@@ -7,7 +7,7 @@ const router = express.Router();
 // GET user details from token (no shared middleware used)
 router.get('/UserDetails', async (req, res) => {
     const token = req.header('Authorization');
-    console.log('checking weather user with token is present or not ');git add
+    console.log('checking weather user with token is present or not ');
 
     if (!token) {
         return res.status(401).json({ message: 'Token is missing' });
